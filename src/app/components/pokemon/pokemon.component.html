@@ -1,0 +1,64 @@
+<article class="pokemon">
+  <header class="pokemon__header">
+    <div class="pokemon__description">
+      <span>
+        <h1 class="capitalize text-3xl">{{ pokemon.name }}</h1>
+        <div class="flex gap-2">
+          <p-badge
+            [value]="ability"
+            *ngFor="let ability of pokemon.abilities"
+          ></p-badge>
+        </div>
+      </span>
+      <span>#{{ pokemon.id }}</span>
+    </div>
+
+    <div class="pokemon__image">
+      <img
+        #image
+        [src]="pokemon.picture"
+        alt="pokemon image"
+      />
+    </div>
+  </header>
+  <section class="pokemon__body">
+
+    <h2 class="text-center my-3">Información</h2>
+
+    <section class="flex my-5 justify-content-evenly">
+      <app-about-item
+        icon="weight"
+        [value]="pokemon.weight"
+        description="Peso"
+      />
+
+      <p-divider layout="vertical"></p-divider>
+
+      <app-about-item
+        icon="ruler2"
+        [value]="pokemon.height"
+        description="Altura"
+      />
+
+      <p-divider layout="vertical"></p-divider>
+
+      <app-about-item
+        [value]="pokemon.moves"
+        description="Movimientos"
+      />
+    </section>
+
+    <p class="text-left">
+      {{ pokemon.description }}
+    </p>
+
+    <h2 class="text-center my-3">Estadísticas</h2>
+
+    <div class="pokemon__stats">
+      <app-skill name="HP" [value]="pokemon.stats.hp" />
+      <app-skill name="Attack" [value]="pokemon.stats.attack" />
+      <app-skill name="Defense" [value]="pokemon.stats.defense" />
+      <app-skill name="Speed" [value]="pokemon.stats.defense" />
+    </div>
+  </section>
+</article>

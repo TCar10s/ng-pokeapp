@@ -1,0 +1,48 @@
+.pokemon {
+  width: 100vw;
+  max-width: 500px;
+  background-color: var(--surface-card);
+  border-radius: 20px;
+
+  &__header {
+    padding: 30px 30px 0 30px;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      margin-top: 10px;
+      transform: translateY(30px);
+      max-width: 150px;
+      margin: 0 auto;
+    }
+  }
+
+  &__body {
+    background-color: var(--surface-ground);
+    border-radius: 40px 40px 20px 20px;
+    padding: 40px;
+
+    p {
+      color: var(--text-color-secondary);
+    }
+  }
+
+  &__stats {
+    margin-top: 10px;
+  }
+
+  &__refresh {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
